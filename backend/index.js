@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import authRoutes from "./routes/auth-routes.js";
 import taskRoutes from "./routes/task-routes.js";
 import authenticateMiddleware from "./middlewares/authenticate-middleware.js";
-import connectDB from "./utils/connect-db.js";
+import { connectDB } from "./utils/connect-db.js";
 import { errorMiddleware } from "./middlewares/error-middleware.js";
 import cors from "cors";
 
