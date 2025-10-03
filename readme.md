@@ -1,6 +1,6 @@
 # Mini Task Manager
 
-A full-stack task management application built with React (Vite + TypeScript) for the frontend and Node.js/Express with MongoDB for the backend.
+A full-stack task management application built with React (Vite + TypeScript) for the frontend and Node.js/Express with MySQL for the backend.
 
 ## Demo
 
@@ -24,7 +24,7 @@ A full-stack task management application built with React (Vite + TypeScript) fo
 
 ### Backend
 - Node.js with Express.js
-- MongoDB with Mongoose ODM
+- MySQL for database
 - JWT for authentication
 - Bcrypt for password hashing
 - CORS for cross-origin requests
@@ -34,7 +34,7 @@ A full-stack task management application built with React (Vite + TypeScript) fo
 
 - Node.js (v16 or higher)
 - npm or yarn
-- MongoDB (local or MongoDB Atlas)
+- MySQL server running locally or accessible remotely
 
 ## Getting Started
 
@@ -52,7 +52,10 @@ A full-stack task management application built with React (Vite + TypeScript) fo
 
 3. Create a `.env` file in the backend directory with the following variables:
    ```
-   MONGODB_URI=your_mongodb_connection_string
+   MYSQL_HOST=localhost
+   MYSQL_USER=root
+   MYSQL_PASSWORD=localhost
+   MYSQL_DATABASE=task_manager
    JWT_SECRET=your_jwt_secret_key
    PORT=5000
    ```
@@ -91,8 +94,9 @@ mini-task-manager/
 ├── backend/
 │   ├── controllers/    # Route controllers
 │   ├── middlewares/    # Custom middleware
-│   ├── models/         # MongoDB models
+│   ├── services/       # business logic
 │   ├── routes/         # API routes
+│   ├── utils/          # utilities
 │   ├── .env            # Environment variables
 │   ├── package.json    # Backend dependencies
 │   └── server.js       # Entry point
@@ -122,4 +126,3 @@ mini-task-manager/
 - `GET /api/tasks/:id` - Get a single task
 - `PUT /api/tasks/:id` - Update a task
 - `DELETE /api/tasks/:id` - Delete a task
-
